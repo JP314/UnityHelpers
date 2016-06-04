@@ -73,4 +73,11 @@ public static class VectorExtension
 		return source * magnitude * magnitude / oldSqrMagnitude;
 	}
 	
+	public static Vector3 LimitMagnitude(this Vector3 source, float magnitude) {
+		if (source.sqrMagnitude <= magnitude * magnitude) {
+			return source;
+		}
+		return source.WithMagnitude(magnitude);
+	}
+	
 }
