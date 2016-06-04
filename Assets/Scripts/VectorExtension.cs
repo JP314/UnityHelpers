@@ -80,4 +80,20 @@ public static class VectorExtension
 		return source.WithMagnitude(magnitude);
 	}
 	
+	public static Vector2 WithMagnitude(this Vector2 source, float magnitude)
+	{
+		var oldSqrMagnitude = source.sqrMagnitude;
+		if (oldSqrMagnitude < float.Epsilon) {
+			return Vector2.zero;
+		}
+		return source * magnitude * magnitude / oldSqrMagnitude;
+	}
+	
+	public static Vector2 LimitMagnitude(this Vector2 source, float magnitude) {
+		if (source.sqrMagnitude <= magnitude * magnitude) {
+			return source;
+		}
+		return source.WithMagnitude(magnitude);
+	}
+	
 }
