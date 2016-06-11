@@ -15,7 +15,6 @@ public static class VectorExtension
 	/// <summary>
 	/// Returns a new instance of Vector2 where the Y component is replaced
 	/// </summary>
-	/// <returns></returns>
 	public static Vector2 WithY(this Vector2 source, float y)
 	{
 		return new Vector2(source.x, y);
@@ -154,7 +153,6 @@ public static class VectorExtension
 	/// <summary>
 	/// Returns a rotated Vector2
 	/// </summary>
-	/// <returns></returns>
 	public static Vector2 Rotate(this Vector2 source, float angle) {
 		var cos = Mathf.Cos(angle * Mathf.Deg2Rad);
 		var sin = Mathf.Sin(angle * Mathf.Deg2Rad);
